@@ -27,25 +27,26 @@ Agent”
 
 ## Target User / Customer
 
-Smallholder farmers in developing areas
-Secondary: Governments (agriculture departments, NGOs)
+- Smallholder farmers in developing areas
+- Secondary: Governments (agriculture departments, NGOs)
 
 ## Data
-Most of the data used would be generated within the project itself
-Reference Weed Identification images
-UC weed photo library
-Weed Alert (need to verify images are open source)
-Weed Science Society of America
-Possible data science techniques
-CNN (for weed recognition/classification within the unit)
-Pub/Sub data handling (MQTT)
-General IoT activity of edge sensors feeding central analytic systems.
-Reporting and visualization (D3 (or C3 or Chart.js)) visualizations
+- Most of the data used would be generated within the project itself
+- Reference Weed Identification images
+- UC weed photo library
+- Weed Alert (need to verify images are open source)
+- Weed Science Society of America
+- Possible data science techniques
+- CNN (for weed recognition/classification within the unit)
+- Pub/Sub data handling (MQTT)
+- General IoT activity of edge sensors feeding central analytic systems.
+- Reporting and visualization (D3 (or C3 or Chart.js)) visualizations
 
 ## Related research/products
 
-Wheeled “smart weeders” noted above
-Developing world applications of Raspberry Pi
+- Wheeled “smart weeders” noted above
+- Developing world applications of Raspberry Pi
+
 ### Implementation notes:
 - May be able to generate our own images by photographing sprouting seeds (i.e. use various
 beans, peas, and flower seeds as sample “crop” and “weed” plants as a training example)
