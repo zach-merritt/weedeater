@@ -4,6 +4,10 @@ import time
 import random
 import cv2
 
+#
+# Set up video capture device, with default settings
+#
+
 cap = cv2.VideoCapture(0)
 zoom_factor = 0.4
 for index in range(10):
@@ -37,5 +41,5 @@ for index in range(10):
         cv2.imwrite(('image_%04d_%02d.jpg' % (index, loop) ), small)
 
 
-#plt.imshow(small)
+#plt.imshow(small)   #Could put these statements inside loop to view progress,
 #plt.show()
