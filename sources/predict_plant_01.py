@@ -56,18 +56,20 @@ def output_prediction(image_path, save_dir = None, true_class = None, show_img =
     predicted_class = class_lookup[prediction_index]
     
     if show_img:
-        title = f'Predicted class: {predicted_class}, prob = {class_prob} \n True Class: {true_class}'
+        #title = f'Predicted class: {predicted_class}, prob = {class_prob} \n True Class: {true_class}'
+        title = 'Predicted class: {predicted_class}, prob = {class_prob} \n True Class: {true_class}'.format(predicted_class=predicted_class,prob_class=prob_class,true_class=true_class)
         img = display_image(cv2.imread(image_path), title)
     
     if save_dir:
         image_name = image_path.split("\\")[len(image_path.split("\\")) - 1].split(".")[0]
-        save_path = f'{save_dir}\\{image_name}_prediction.jpg'
+        #save_path = f'{save_dir}\\{image_name}_prediction.jpg'
+        save_path = '{save_dir}\\{image_name}_prediction.jpg'.format(save_dir=save_dir,image_name=image_name)
         img.savefig(save_path, format = "png")
         
     return (predicted_class, class_prob, true_class)
 
 predicted_class, class_prob, true_class = output_prediction(image_path = image)
-print(f'predicted class: {predicted_class}')
-print(f'probability: {class_prob}')
+print('predicted class: {predicted_class}'.format(predicted_class=predicted_class))
+print('probability: {class_prob}'.format(class_prob=class_prob))
 
 
