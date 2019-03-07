@@ -37,6 +37,7 @@ dependencies:
   - opencv==3.4.2
   - openssl==1.1.1a
   - pandas==0.24.0
+  - pillow=5.4.1
   - pip==18.1
   - protobuf==3.6.1
   - py-opencv==3.4.2
