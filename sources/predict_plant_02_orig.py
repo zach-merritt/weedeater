@@ -8,7 +8,6 @@ import numpy as np
 import cv2
 import sys
 import argparse
-import datetime
 
 parser = argparse.ArgumentParser(description = 'Uses saved weights from a Keras CNN to classify images')
 parser.add_argument('model_weights', metavar = 'model', type = str, help = 'the file path to the model weight h5 file')
@@ -37,7 +36,7 @@ model.add(Flatten())
 model.add(Dense(64))
 model.add(Activation('relu'))
 model.add(Dropout(0.5))
-model.add(Dense(5))        #changed from 4
+model.add(Dense(4))
 model.add(Activation('softmax'))
 
 model.compile(loss = 'categorical_crossentropy',
@@ -48,7 +47,7 @@ model.load_weights(weights)
 
 def output_prediction(image_path, save_dir = None, true_class = None, show_img = False):
     '''Given an image path, returns the predicted class and its probability'''
-    classes = {'marigold': 0, 'morning_glory': 1, 'pea': 2, 'radish': 3, 'dirt': 4}   #added dirt
+    classes = {'marigold': 0, 'morning_glory': 1, 'pea': 2, 'radish': 3}
     image = load_img(image_path, target_size = (200, 200))
     x = np.reshape(img_to_array(image)/255.0, [1, 200, 200, 3])
     class_lookup = {v: k for k, v in classes.items()}
@@ -71,9 +70,6 @@ def output_prediction(image_path, save_dir = None, true_class = None, show_img =
 
 while True:
   image = input()
-  sys.stderr.write("\n" + datetime.datetime.now().isoformat() + "\n" )
   predicted_class, class_prob, true_class = output_prediction(image_path = image)
-  sys.stderr.write(datetime.datetime.now().isoformat() + "\n" )
-  sys.stderr.flush()
   print('predicted class: {predicted_class} probability: {class_prob}'.format(predicted_class=predicted_class,class_prob=class_prob))
   sys.stdout.flush()
